@@ -11,7 +11,7 @@ int main()
     int k, tam = sizeof(vetor) / sizeof(vetor[0]);
     insertionSort(vetor, tam);
     // bubbleSort(vetor, tam);
-    //  selectionSort(vetor, tam);
+    // selectionSort(vetor, tam);
 
     // printf("%d", m);
 
@@ -52,9 +52,12 @@ void selectionSort(int v[], int tam)
             {
                 min = j;
             }
-            aux = v[min];
-            v[min] = v[i];
-            v[i] = aux;
+            if (v[min] != v[i])
+            {
+                aux = v[i];
+                v[i] = v[min];
+                v[min] = aux;
+            }
         }
     }
 }
